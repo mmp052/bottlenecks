@@ -12,7 +12,7 @@ pipeline {
                     credentialsId: 'aws-credentials'
                 ]]) {
                     sh '''
-                        aws eks update-kubeconfig --name eks-store --region sa-east-1
+                        aws eks update-kubeconfig --name eks-store --region us-east-2
                         kubectl apply -f grafana/k8s/k8s.yaml
                     '''
                 }
@@ -26,7 +26,7 @@ pipeline {
                     credentialsId: 'aws-credentials'
                 ]]) {
                     sh '''
-                        aws eks update-kubeconfig --name eks-store --region sa-east-1
+                        aws eks update-kubeconfig --name eks-store --region us-east-2
                         kubectl apply -f prometheus/k8s/k8s.yaml
                     '''
                 }
@@ -40,7 +40,7 @@ pipeline {
                     credentialsId: 'aws-credentials'
                 ]]) {
                     sh '''
-                        aws eks update-kubeconfig --name eks-store --region sa-east-1
+                        aws eks update-kubeconfig --name eks-store --region us-east-2
                         kubectl apply -f redis/k8s/k8s.yaml
                     '''
                 }
